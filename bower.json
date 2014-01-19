@@ -1,0 +1,21 @@
+{
+  "name": "voix",
+  "version": "0.0.1",
+  "authors": [
+    "Artem Medeusheyev <artem.medeu@gmail.com>"
+  ],
+  "description": "Voix LLC front page",
+  "license": "MIT",
+  "homepage": "voix.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.3"
+  }
+}
