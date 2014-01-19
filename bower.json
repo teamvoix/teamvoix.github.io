@@ -16,6 +16,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.0.3"
+    "bootstrap": "~3.0.3",
+    "html5shiv": "~3.7.0",
+    "respond": "~1.4.2",
+    "mrmrs-colors": "*"
   }
 }

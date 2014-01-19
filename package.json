@@ -12,5 +12,18 @@
     "url": "https://github.com/teamvoix/teamvoix.github.io.git"
   },
   "author": "Artem Medeusheyev <artem.medeusheyev@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "should": "~3.0.1",
+    "gulp-flatten": "0.0.2",
+    "gulp": "~3.4.1",
+    "gulp-less": "~1.1.10",
+    "mocha": "~1.17.0",
+    "gulp-uglify": "~0.1.0",
+    "rimraf": "~2.2.6",
+    "gulp-jade": "~0.3.0",
+    "gulp-livereload": "~0.2.0",
+    "tiny-lr": "0.0.5",
+    "express": "~3.4.8"
+  }
 }
