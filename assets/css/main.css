@@ -144,19 +144,34 @@ a:active {
   -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
 }
-.top-line {
+body {
   background-color: #ff851b;
+}
+.top-line {
   position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
   right: 0;
-  height: 100%;
   font-family: 'Raleway', sans-serif;
-  font-size: 14em;
   color: #ffffff;
   text-align: center;
   vertical-align: middle;
+}
+@media (min-width: 400px) {
+  .top-line {
+    font-size: 14em;
+  }
+}
+@media (min-width: 700px) {
+  .top-line {
+    font-size: 18em;
+  }
+}
+@media (max-width: 400px) {
+  .top-line {
+    font-size: 10em;
+  }
 }
 .top-line .small {
   font-size: .2em;

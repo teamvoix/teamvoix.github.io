@@ -1,16 +1,27 @@
 @import '../../bower_components/mrmrs-colors/less/colors';
 @import url('http://fonts.googleapis.com/css?family=Raleway');
 
-.top-line {
+body {
   background-color: @orange;
+}
+
+.top-line {
   position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  // height: 100%;
   font-family: 'Raleway', sans-serif;
-  font-size: 14em;
+  @media (min-width: 400px) {
+    font-size: 14em;
+  }
+  @media (min-width: 700px) {
+    font-size: 18em;
+  }
+  @media (max-width: 400px) {
+    font-size: 10em;
+  }
   color: @white;
   text-align: center;
   vertical-align: middle;
