@@ -5,8 +5,11 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp": "gulp"
   },
+  "pre-commit": [
+    "gulp"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/teamvoix/teamvoix.github.io.git"
@@ -24,6 +27,7 @@
     "gulp-jade": "~0.3.0",
     "gulp-livereload": "~0.2.0",
     "tiny-lr": "0.0.5",
-    "express": "~3.4.8"
+    "express": "~3.4.8",
+    "pre-commit": "0.0.4"
   }
 }

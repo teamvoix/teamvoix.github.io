@@ -34,6 +34,7 @@ function bc() {
 }
 
 function dist(subpath) {
+  subpath = subpath || '';
   return g.dest('assets/' + subpath);
 }
 
@@ -51,7 +52,7 @@ g.task('vendor', function () {
     .pipe(dist('js'));
 });
 
-g.task('site', ['jade', 'less']);
+g.task('site', ['jade', 'less', 'imgs']);
 
 g.task('jade', function () {
   g.src('src/index.jade')
@@ -68,6 +69,11 @@ g.task('less', function () {
     .pipe(flatten())
     .pipe(dist('css'))
     .pipe(reload(lrServer));
+});
+
+g.task('imgs', function () {
+  g.src('src/img/*.*')
+    .pipe(dist('img'));
 });
 
 g.task('watch', function () {
