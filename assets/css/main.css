@@ -148,11 +148,12 @@ body {
   background-color: #ff851b;
 }
 .top-line {
-  position: fixed;
+  position: absolute;
   z-index: 100;
   top: 0;
   left: 0;
   right: 0;
+  padding-bottom: 30px;
   font-family: 'Raleway', sans-serif;
   color: #ffffff;
   text-align: center;
