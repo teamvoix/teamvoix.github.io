@@ -151,6 +151,11 @@ body {
 body {
   font-size: 62.5%;
 }
+.content {
+  position: relative;
+  z-index: 100;
+  margin-bottom: 6em;
+}
 .voix-brand {
   margin: 0;
   font-variant: small-caps;
@@ -363,4 +368,23 @@ section.three .logos .logo {
 }
 section.three .logos .desc {
   padding-bottom: 5px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6em;
+  background-color: #2b303a;
+  color: #aa8a69;
+  z-index: 50;
+  text-align: center;
+}
+footer .copy {
+  font-size: 1.4em;
+  padding-top: 1.4em;
+  font-family: sans-serif;
+}
+footer .copy .voix {
+  font-family: 'Orbitron', sans-serif;
 }
