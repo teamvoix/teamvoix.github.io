@@ -42,15 +42,16 @@ header {
 }
 
 section {
-  padding: 1em 0 1em 0;
+  padding: 1.5em 0 1.5em 0;
   font-family: 'Helvetica Neue', Helvetica, arial, freesans, clean, sans-serif;
   width: 100%;
   h2 {
     margin-top: 0;
-    font-weight: 400;
+    margin-bottom: 0;
+    font-weight: 500;
   }
   h3 {
-    font-weight: 200;
+    font-weight: 300;
   }
   .logos, .columns {
     max-width: 60em;
@@ -72,11 +73,11 @@ section {
       display: table-cell;
       &:first-child {
         padding-right: 0.5em;
-        padding-left: 0.3em;
+        padding-left: 0.5em;
       }
       &:last-child {
         padding-left: 0.5em;
-        padding-right: 0.3em;
+        padding-right: 0.5em;
       }
     }
   }
@@ -93,9 +94,14 @@ section {
     }
   }
   &.three {
-    .sector(@section-three-bg, @section-one-color, 0.6, true);
-    .logos .logo img,
-    .logos .desc {
+    .sector(@section-four-bg, @section-four-color, 0.6, true);
+  }
+  &.four {
+    .sector(@section-three-bg, @section-three-color, 0.6, true);
+    .logos .logo img {
+      @media (min-width: 320px) {
+        height: 100px;
+      }
       @media (min-width: 400px) {
         height: 70px;
       }
@@ -131,7 +137,6 @@ footer {
   .copy {
     font-size: 1.4em;
     padding-top: 1.4em;
-    // padding-right: 2em;
     font-family: sans-serif;
     .voix {
       font-family: 'Orbitron', sans-serif;
