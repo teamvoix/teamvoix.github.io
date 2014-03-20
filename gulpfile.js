@@ -6,12 +6,16 @@ var less = require('gulp-less');
 var uglify = require('gulp-uglify');
 var flatten = require('gulp-flatten');
 var jade = require('gulp-jade');
+var minifyCSS = require('gulp-minify-css');
+var gif = require('gulp-if');
 var lr = require('tiny-lr');
 var reload = require('gulp-livereload');
 var lrServer = lr();
 
 var express = require('express');
 var server = express();
+
+var prod = !!process.env.PROD;
 
 server.use(express.favicon());
 server.use(express.static(__dirname));
@@ -39,15 +43,7 @@ function dist(subpath) {
 }
 
 g.task('vendor', function () {
-  g.src(bc('bootstrap.min.css'))
-    .pipe(flatten())
-    .pipe(dist('css'));
-
-  g.src(bc('glyphicons-halflings-regular.*'))
-    .pipe(flatten())
-    .pipe(dist('fonts'));
-
-  g.src(bc('jquery.min.js', 'bootstrap.min.js', 'html5shiv.js', 'respond.min.js'))
+  g.src(bc('html5shiv.js'))
     .pipe(flatten())
     .pipe(dist('js'));
 });
@@ -66,6 +62,7 @@ g.task('less', function () {
     .pipe(less().on('error', function (err) {
       console.log(err.toString());
     }))
+    .pipe(gif(prod, minifyCSS()))
     .pipe(flatten())
     .pipe(dist('css'))
     .pipe(reload(lrServer));
@@ -93,6 +90,6 @@ g.task('default', function () {
     if (err) {
       return console.log(err);
     }
-    g.run('vendor', 'site');
+    g.start.apply(g, ['vendor', 'site']);
   });
 });
