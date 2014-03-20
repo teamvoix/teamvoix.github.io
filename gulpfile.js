@@ -56,7 +56,7 @@ g.task('site', ['jade', 'less', 'imgs']);
 
 g.task('jade', function () {
   g.src('src/index.jade')
-    .pipe(jade({pretty: true}))
+    .pipe(jade())
     .pipe(g.dest('.'))
     .pipe(reload(lrServer));
 });
@@ -82,12 +82,8 @@ g.task('watch', function () {
     if (err) {
       console.log(err);
     } else {
-      g.watch('src/**/*.less', function () {
-        g.run('less');
-      });
-      g.watch('src/**/*.jade', function () {
-        g.run('jade');
-      });
+      g.watch('src/**/*.less', ['less']);
+      g.watch('src/**/*.jade', ['jade']);
     }
   })
 });

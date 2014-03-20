@@ -1,0 +1,33 @@
+.inc(@font-size, @percentage) {
+  font-size: unit(@font-size + @font-size * @percentage / 100, em);
+}
+
+.sector(@bg, @fg, @min-font-size, @darken) {
+  background-color: @bg;
+  color: @fg;
+  &>* {
+    @media (min-width: 200px) {
+      .inc(@min-font-size, 0);
+    }
+    @media (min-width: 400px) {
+      .inc(@min-font-size, 50);
+    }
+    @media (min-width: 600px) {
+      .inc(@min-font-size, 100);
+    }
+    @media (min-width: 800px) {
+      .inc(@min-font-size, 150);
+    }
+    @media (min-width: 1000px) {
+      .inc(@min-font-size, 200);
+    }
+  }
+}
+
+.sector(@bg, @fg, @min-font-size, @darken) when (@darken = true) {
+  border-bottom: 0.4em solid fade(darken(@bg, 20%), 70%);
+}
+
+.sector(@bg, @fg, @min-font-size, @darken) when (@darken = false) {
+  border-bottom: 0.4em solid fade(lighten(@bg, 20%), 70%);
+}
