@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "gulp": "gulp"
+    "gulp": "PROD=true gulp"
   },
   "pre-commit": [
     "gulp"
