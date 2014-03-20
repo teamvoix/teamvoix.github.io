@@ -81,6 +81,7 @@ g.task('watch', function () {
     } else {
       g.watch('src/**/*.less', ['less']);
       g.watch('src/**/*.jade', ['jade']);
+      g.watch('src/img/*.*', ['imgs']);
     }
   })
 });
