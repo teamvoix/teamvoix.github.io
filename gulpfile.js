@@ -8,14 +8,16 @@ var flatten = require('gulp-flatten');
 var jade = require('gulp-jade');
 var minifyCSS = require('gulp-minify-css');
 var gif = require('gulp-if');
-var lr = require('tiny-lr');
 var reload = require('gulp-livereload');
-var lrServer = lr();
 
 var express = require('express');
 var server = express();
 
 var prod = !!process.env.PROD;
+
+var lessFiles = 'src/**/*.less';
+var jadeFiles = 'src/**/*.jade';
+var imgFiles = 'src/img/*.*';
 
 server.use(express.favicon());
 server.use(express.static(__dirname));
@@ -32,7 +34,7 @@ function bc() {
 
   args.forEach(function (f) {
     result.push(base + f);
-  })
+  });
 
   return result;
 }
@@ -53,8 +55,7 @@ g.task('site', ['jade', 'less', 'imgs']);
 g.task('jade', function () {
   g.src('src/index.jade')
     .pipe(jade())
-    .pipe(g.dest('.'))
-    .pipe(reload(lrServer));
+    .pipe(g.dest('.'));
 });
 
 g.task('less', function () {
@@ -64,8 +65,7 @@ g.task('less', function () {
     }))
     .pipe(gif(prod, minifyCSS()))
     .pipe(flatten())
-    .pipe(dist('css'))
-    .pipe(reload(lrServer));
+    .pipe(dist('css'));
 });
 
 g.task('imgs', function () {
@@ -75,15 +75,13 @@ g.task('imgs', function () {
 
 g.task('watch', function () {
   server.listen(3000);
-  lrServer.listen(35729, function (err) {
-    if (err) {
-      console.log(err);
-    } else {
-      g.watch('src/**/*.less', ['less']);
-      g.watch('src/**/*.jade', ['jade']);
-      g.watch('src/img/*.*', ['imgs']);
-    }
-  })
+  var lrServer = reload();
+  g.watch(lessFiles, ['less']);
+  g.watch(jadeFiles, ['jade']);
+  g.watch(imgFiles, ['imgs']);
+  g.watch(['assets/**/*.*', 'index.html']).on('change', function(file) {
+    lrServer.changed(file.path);
+  });
 });
 
 g.task('default', function () {
