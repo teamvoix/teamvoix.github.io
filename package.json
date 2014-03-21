@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/teamvoix/teamvoix.github.io.git"
+    "url": "https://bitbucket.org/voix/voix.bitbucket.org.git"
   },
   "author": "Artem Medeusheyev <artem.medeusheyev@gmail.com>",
   "license": "MIT",
