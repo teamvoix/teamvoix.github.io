@@ -1,6 +1,7 @@
 @import '../../bower_components/mrmrs-colors/less/colors';
 @import 'variables';
 @import 'mixins';
+@import 'fonts';
 @import url('http://fonts.googleapis.com/css?family=Orbitron:700');
 
 html, body {
@@ -41,6 +42,22 @@ header {
     padding-bottom: 1em;
     padding-top: 1em;
     padding-left: 1em;
+}
+
+.social {
+  position: absolute;
+  top: 0;
+  right: 0.25em;
+  font-size: 4em;
+  a {
+    color: @white;
+    opacity: .7;
+    -webkit-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 section {

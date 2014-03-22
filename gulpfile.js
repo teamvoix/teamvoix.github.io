@@ -18,6 +18,7 @@ var prod = !!process.env.PROD;
 var lessFiles = 'src/**/*.less';
 var jadeFiles = 'src/**/*.jade';
 var imgFiles = 'src/img/*.*';
+var fontFiles = 'src/fonts/*.*';
 
 server.use(express.favicon());
 server.use(express.static(__dirname));
@@ -50,7 +51,7 @@ g.task('vendor', function () {
     .pipe(dist('js'));
 });
 
-g.task('site', ['jade', 'less', 'imgs']);
+g.task('site', ['jade', 'less', 'imgs', 'fonts']);
 
 g.task('jade', function () {
   g.src('src/index.jade')
@@ -69,9 +70,14 @@ g.task('less', function () {
 });
 
 g.task('imgs', function () {
-  g.src('src/img/*.*')
+  g.src(imgFiles)
     .pipe(dist('img'));
 });
+
+g.task('fonts', function() {
+  g.src(fontFiles)
+    .pipe(dist('fonts'));
+})
 
 g.task('watch', function () {
   server.listen(3000);
