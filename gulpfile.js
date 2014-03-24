@@ -1,14 +1,18 @@
+'use strict';
+
 var fs = require('fs');
 var rimraf = require('rimraf');
-var path = require('path');
 var g = require('gulp');
+var bundle = require('./bundle');
 var less = require('gulp-less');
-var uglify = require('gulp-uglify');
 var flatten = require('gulp-flatten');
 var jade = require('gulp-jade');
 var minifyCSS = require('gulp-minify-css');
 var gif = require('gulp-if');
 var reload = require('gulp-livereload');
+var rename = require('gulp-rename');
+
+bundle(g);
 
 var express = require('express');
 var server = express();
@@ -19,6 +23,7 @@ var lessFiles = 'src/**/*.less';
 var jadeFiles = 'src/**/*.jade';
 var imgFiles = 'src/img/*.*';
 var fontFiles = 'src/fonts/*.*';
+var jsFiles = 'src/js/**/*.js';
 
 server.use(express.favicon());
 server.use(express.static(__dirname));
@@ -51,12 +56,16 @@ g.task('vendor', function () {
     .pipe(dist('js'));
 });
 
-g.task('site', ['jade', 'less', 'imgs', 'fonts']);
+g.task('site', ['jade', 'less', 'imgs', 'fonts', 'js']);
 
 g.task('jade', function () {
   g.src('src/index.jade')
     .pipe(jade())
     .pipe(g.dest('.'));
+  g.src('src/index.en.jade')
+    .pipe(jade())
+    .pipe(rename('index.html'))
+    .pipe(g.dest('en'));
 });
 
 g.task('less', function () {
@@ -77,14 +86,15 @@ g.task('imgs', function () {
 g.task('fonts', function() {
   g.src(fontFiles)
     .pipe(dist('fonts'));
-})
+});
 
-g.task('watch', function () {
+g.task('watch', ['default'], function () {
   server.listen(3000);
   var lrServer = reload();
   g.watch(lessFiles, ['less']);
   g.watch(jadeFiles, ['jade']);
   g.watch(imgFiles, ['imgs']);
+  g.watch(jsFiles, ['js']);
   g.watch(['assets/**/*.*', 'index.html']).on('change', function(file) {
     lrServer.changed(file.path);
   });

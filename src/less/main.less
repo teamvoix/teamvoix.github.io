@@ -41,6 +41,23 @@ header {
     padding-bottom: 1em;
     padding-top: 1em;
     padding-left: 1em;
+
+    a.language-switcher {
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      color: @white;
+      font-size: 2em;
+      &:hover {
+        cursor: pointer;
+      }
+      .en {
+        content: 'EN';
+      }
+      .ru {
+        content: 'RU';
+      }
+    }
 }
 
 section {
