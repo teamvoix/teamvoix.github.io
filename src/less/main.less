@@ -99,6 +99,13 @@ section {
       }
     }
   }
+  &.about {
+    h2 { text-align: center; }
+    p {
+      margin-bottom: 0.3em;
+    }
+    .sector(@section-about-bg, @section-about-color, 0.6, true);
+  }
   &.one {
     .sector(@section-one-bg, @section-one-color, 0.6, true);
     .columns .column:first-child {
