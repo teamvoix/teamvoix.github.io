@@ -34,6 +34,18 @@
     "gulp-rename": "^1.2.0",
     "browserify": "^3.33.0",
     "through2": "^0.4.1",
-    "gulp-streamify": "0.0.4"
+    "gulp-streamify": "0.0.4",
+    "browserify-shim": "^3.6.0"
+  },
+  "browser": {
+    "scrollReveal": "./bower_components/scrollReveal.js/dist/scrollReveal.min.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "scrollReveal": "scrollReveal"
   }
 }

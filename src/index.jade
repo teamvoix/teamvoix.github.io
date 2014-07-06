@@ -10,7 +10,6 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     meta(name='google-site-verification'
       content='AUJxZrPDffY5MZKZ_w4EReCf2PYSCJAeQpvz6lqavNQ')
-    //- script(src='/assets/js/main.js')
     link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'
       rel='stylesheet')
     link(rel='stylesheet' href='/assets/css/main.css')
@@ -28,7 +27,7 @@ html
             //- h2 О нас
             p Мы &mdash; активная и развивающаяся команда разработчиков, базирующаяся в г.Алматы, Казахстан.
       section.one
-        .columns
+        .columns(data-scroll-reveal)
             .column.left
               h2 Наши приоритеты
               p
@@ -50,7 +49,7 @@ html
             .column.right
               img(src='/assets/img/about.png' alt='Рабочая среда')
       section.two
-        .columns
+        .columns(data-scroll-reveal)
             .column.left
               img(src='/assets/img/workflow.svg' alt='Рабочий процесс')
             .column.right
@@ -78,7 +77,7 @@ html
           .column
             h2 Стек используемых нами технологий
       section.four
-        .logos
+        .logos(data-scroll-reveal)
           .logo
             a(href='http://nodejs.org')
               img(src='/assets/img/nodejs.svg' title='NodeJS' alt='NodeJS')
@@ -89,7 +88,7 @@ html
               Идеален для быстрого прототипирования и создания RESTful JSON API.
               С помощью node-webkit можно разрабатывать полноценные десктоп приложения.
               А огромный выбор библиотек с открытым кодом трудно переоценить.
-        .logos
+        .logos(data-scroll-reveal)
           .logo
             a(href='http://www.html5rocks.com/')
               img(src='/assets/img/html5.svg' alt='HTML5' title='HTML5')
@@ -100,7 +99,7 @@ html
               Мы стараемся ориентироваться на современные браузеры, в которых развита поддержка HTML5,
               это позволяет нам максимизировать удобство пользователей и наших разработчиков,
               а также снизить цены на продукт.
-        .logos
+        .logos(data-scroll-reveal)
           .logo
             a(href='http://angularjs.org/')
               img(src='/assets/img/angular.svg' alt='AngularJS' title='AngularJS')
@@ -110,7 +109,7 @@ html
             p.
               Этот фреймворк от Google уже 2-й год наш постоянный спутник во всех проектах. Его широкие
               возможности тестирования, удобная система модулей и простота нам не оставили выбора.
-        .logos
+        .logos(data-scroll-reveal)
           .logo
             a(href='http://golang.org/')
               img(src='/assets/img/golang.svg' alt='Go Language' title='Go Language')
@@ -121,9 +120,9 @@ html
               Когда нужно написать какой-либо инструмент, установка которого заключается в
               простом копировании исполняемого файла, Go незаменим. Помимо этого, Go очень удобен в
               разработке многопоточных систем.
-        .logos
+        .logos(data-scroll-reveal)
           .logo
-            a(href='http://java.com/')
+            a(href='http://java.com')
               img(src='/assets/img/java.svg' alt='Java' title='Java')
           .desc
             a(href='http://java.com/')
@@ -141,6 +140,7 @@ html
         | ТОО
         span.voix  Voix
         |, г.Алматы, Казахстан.
+    script(src='/assets/js/main.js')
     script.
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

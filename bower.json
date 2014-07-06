@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "html5shiv": "~3.7.0",
-    "mrmrs-colors": "*"
+    "mrmrs-colors": "*",
+    "scrollReveal.js": "~0.1.3"
   }
 }

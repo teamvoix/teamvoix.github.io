@@ -12,7 +12,7 @@ module.exports = function (gulp) {
     return through.obj(function(file, encoding, callback) {
       var bundle = browserify()
         .require(file, { entry: file.path })
-        .bundle({ debug: debug });
+        .bundle({ debug: false });
       file.contents = bundle;
       this.push(file);
 
@@ -22,7 +22,7 @@ module.exports = function (gulp) {
 
   gulp.task('js', function() {
     return gulp.src('src/js/main.js')
-      .pipe(bundle(true))
+      .pipe(bundle(!prod))
       .pipe(streamify(gif(prod, uglify())))
       .pipe(gulp.dest('assets/js'));
   });
