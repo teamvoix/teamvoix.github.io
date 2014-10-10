@@ -298,6 +298,10 @@
 			display: inline-block;
 			outline: 0;
 		}
+			.image.round {
+				border-radius: 6px;
+				max-width: 100%;
+			}
 
 			.image img
 			{
