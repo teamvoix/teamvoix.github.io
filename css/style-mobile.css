@@ -353,23 +353,23 @@
 /* Content                                                                       */
 /*********************************************************************************/
 
-	#content
+	.content
 	{
 		border-bottom: solid 1px #e8e8e8;
 		padding-bottom: 4em;
 		margin-bottom: 3em !important;
 	}
 
-		#content > :last-child
+		.content > :last-child
 		{
 			margin-bottom: 0 !important;
 		}
 
-	#sidebar
+	.sidebar
 	{
 	}
 
-		#sidebar > :last-child
+		.sidebar > :last-child
 		{
 			margin-bottom: 0 !important;
 		}
