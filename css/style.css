@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Orbitron:700");
-@import url("http://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
+/*@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,800");*/
 
 /*
 	Verti by HTML5 UP
@@ -370,6 +370,10 @@
 			-o-transition: background-color .25s ease-in-out;
 			-ms-transition: background-color .25s ease-in-out;
 			transition: background-color .25s ease-in-out;
+		}
+
+		.disabled {
+			background-color: silver !important;
 		}
 
 			input[type="button"]:hover,
