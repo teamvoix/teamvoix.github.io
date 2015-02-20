@@ -19,13 +19,13 @@
 		margin: 0 0 1.1em 0;
 		line-height: 1em;
 	}
-	
+
 	h3
 	{
 		font-size: 1.35em;
 		margin: 0 0 1em 0;
 	}
-	
+
 	/* Button */
 
 		input[type="button"],
@@ -56,23 +56,23 @@
 					top: 0.05em;
 				}
 
-	/* Box */	
-	
+	/* Box */
+
 		.box
 		{
 			padding: 2em;
 		}
-			
+
 			.box.feature
 			{
 				padding: 0;
 			}
-				
+
 				.box.feature .inner
 				{
 					padding: 4em 2em 3em 2em;
 				}
-				
+
 				.box.feature h2
 				{
 					font-size: 1.35em;
@@ -116,7 +116,7 @@
 			{
 				margin: 0;
 			}
-	
+
 /*********************************************************************************/
 /* Wrappers                                                                      */
 /*********************************************************************************/
@@ -125,17 +125,17 @@
 	{
 		padding: 4.5em 0 1em 0;
 	}
-	
+
 	#features-wrapper
 	{
 		padding: 3em 0 3em 0;
 	}
-	
+
 	#main-wrapper
 	{
 		padding: 5em 0 5em 0;
 	}
-	
+
 	#footer-wrapper
 	{
 		padding: 6em 0 8em 0;
@@ -176,11 +176,11 @@
 		top: 0;
 		font-size: 0.9em;
 	}
-	
+
 		#nav ul
 		{
 		}
-			
+
 			#nav ul li
 			{
 				float: left;
@@ -203,7 +203,7 @@
 					-ms-transition: background-color .25s ease-in-out;
 					transition: background-color .25s ease-in-out;
 				}
-				
+
 				#nav ul li > ul
 				{
 					display: none;
@@ -238,7 +238,7 @@
 					background: #444;
 					color: #fff;
 				}
-				
+
 	.dropotron
 	{
 		background: #fff;
@@ -263,7 +263,7 @@
 			{
 				border-top: 0;
 			}
-	
+
 			.dropotron li > a,
 			.dropotron li > span
 			{
@@ -285,14 +285,14 @@
 				{
 					background: #eee;
 				}
-	
+
 		.dropotron.level-0
 		{
 			font-size: 0.8em;
 			margin-left: 1.5em;
 			margin-top: 0;
 		}
-		
+
 			.dropotron.level-0:before
 			{
 				content: '';
@@ -326,13 +326,13 @@
 			line-height: 1.35em;
 			margin: 0;
 		}
-		
+
 		#banner .button
 		{
 			width: 100%;
 			margin-bottom: 0.5em;
 		}
-		
+
 			#banner .button.icon:before
 			{
 				position: absolute;
@@ -345,7 +345,7 @@
 		{
 			margin-bottom: 0;
 		}
-		
+
 		#banner ul
 		{
 			margin: 0 0 0 2em;
@@ -358,7 +358,7 @@
 	#footer
 	{
 	}
-	
+
 	#copyright
 	{
 		padding: 4em 0 0 0;
